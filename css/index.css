@@ -654,7 +654,6 @@ footer {
     top: 57px;
     width: calc(100% - 140px);
     justify-content: space-between;
-    max-width: ;
   }
   .myDesc {
     order: 4;
