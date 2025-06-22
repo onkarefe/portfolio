@@ -1,0 +1,765 @@
+:root {
+  /* Backgrounds */
+  --bg-main: #1a1a1a; /* Antrasit ana zemin */
+  --bg-card: #222222; /* Hafif açık antrasit kart zemin */
+  --bg-hover: #2c2c2c; /* Hover efekti için koyu gri */
+  --bg-active: #3a3a3a; /* Aktif alanlar için daha belirgin koyu */
+
+  /* Text Colors */
+  --text-primary: #f4f2ed; /* Kırık beyaz – okunabilir ana metin */
+  --text-secondary: #dcd8d0; /* Hafif daha soluk beyaz */
+  --text-muted: #9c9c9c; /* Açıklama, yardımcı metinler için gri */
+
+  /* Accent Colors */
+  --accent: #ff7a5c; /* Coral (turuncumsu pembe, sıcak vurgu) */
+  --accent-hover: #ff967d; /* Hover’da biraz daha yumuşak coral */
+
+  --highlight: #d4af37; /* Soft gold – özel vurgular için */
+  --highlight-muted: #b59b2d; /* Hover veya arka plan gold tonları */
+
+  /* Borders */
+  --border-subtle: #2b2b2b;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.lobster {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--bg-main);
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  scroll-behavior: smooth;
+  max-width: 1030px;
+  padding-left: 30px;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(8vh - 30px);
+  height: 88vh;
+  overflow-y: auto;
+  position: relative;
+}
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* varsa yatayı engelle */
+}
+
+.section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.sideBarMain {
+  width: calc(25% - 16px);
+  position: sticky;
+  top: 0;
+  height: max-content;
+}
+
+.sidebarBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  border-radius: 16px;
+  padding: 8px;
+  transition: box-shadow 0.4s ease;
+}
+
+.profilePicWrapper {
+  height: 225px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  margin-bottom: 16px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.profilePicWrapper img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.myName {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--bg-main);
+  text-align: center;
+}
+
+.myTitle {
+  margin-top: 2px;
+  color: var(--bg-active);
+  font-size: 18px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.myDesc {
+  color: var(--bg-active);
+  text-align: center;
+}
+
+.socialIconRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.socialIconBox {
+  padding: 6px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.socialIconBox:hover {
+  transform: scale(1.1);
+}
+
+.socialIconBox svg {
+  fill: white;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  bottom: -1px;
+}
+
+.instagram {
+  background-color: var(--bg-main);
+}
+
+.linkedin {
+  background-color: var(--bg-main);
+}
+
+.github {
+  background-color: var(--bg-main);
+}
+
+.mail {
+  background-color: var(--bg-main);
+}
+
+.behance {
+  background-color: var(--bg-main);
+}
+
+/* header */
+
+.sideBarNav {
+  margin-top: 30px;
+}
+
+.menu li a {
+  color: var(--text-muted);
+  font-weight: bold;
+  transition: all 0.3s;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  display: block;
+  width: max-content;
+}
+
+.menu li a:hover {
+  color: var(--text-primary) !important;
+  border: 1px solid var(--text-primary) !important;
+}
+
+.activeNav {
+  color: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+}
+
+/* Content */
+
+.content {
+  width: calc(75% - 48px);
+  margin-left: 32px;
+  position: relative;
+  padding-right: 16px;
+}
+
+.section {
+  color: var(--text-muted);
+  transition: all 0.3s;
+  margin-bottom: 50px;
+}
+
+.section:first-of-type {
+  padding: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.paragraphs {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-weight: normal;
+}
+
+.paragraphs strong {
+  font-weight: bold;
+}
+
+.activeSection {
+  color: var(--text-secondary);
+}
+
+.activeSection strong {
+  color: var(--text-primary);
+}
+
+.activeSection h2 {
+  color: var(--text-primary);
+}
+
+/* Toggler */
+
+.togglerMainBox {
+  transition: all 0.3s;
+  margin-bottom: 32px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--text-muted);
+  padding: 16px 0;
+}
+
+.togglerMainBox:hover {
+  padding: 16px;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+}
+
+.activeBox {
+  background-color: var(--bg-card);
+  border: 1px solid var(--text-muted);
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.togglerHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.togglerHeader:hover {
+  color: var(--text-primary);
+}
+
+.timeline {
+  flex-basis: 20%;
+  font-size: 14px;
+}
+
+.compnayBox {
+  flex-basis: 75%;
+}
+
+.company {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.jobTitle {
+  font-size: 14px;
+}
+
+.toggleIcon {
+  flex-basis: 5%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.toggleIcon svg {
+  height: 20px;
+  width: 20px;
+  fill: var(--text-muted);
+  transition: all 0.3s;
+}
+
+.toggleIcon svg.rotated {
+  transform: rotate(180deg);
+}
+
+.shortDescription {
+  padding-left: 20%;
+  flex-basis: 75%;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.techBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-muted);
+  color: var(--bg-main);
+  padding: 5px 10px;
+  border-radius: 16px;
+  margin: 0 16px 16px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.techBox:last-child {
+  margin: 0;
+}
+
+.togglerClosedPart {
+  display: none;
+}
+
+.togglerTitle {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.togglerClosedPart ul {
+  list-style-type: disc;
+  padding-left: 16px;
+}
+
+.togglerClosedPart ul li {
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.activeSection .togglerClosedPart ul li strong {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-decoration: underline;
+}
+
+.copartnerLastLine {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.copartnerLogo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.copartnerLink {
+  transition: all 0.3s;
+  margin-right: 10px;
+}
+
+.copartnerLink:hover {
+  transform: scale(1.05);
+}
+
+.whMainBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.vhMainCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc(49% - 6px);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 3px solid transparent;
+  margin-bottom: 1%;
+}
+.vhMainCard::after {
+  content: "";
+  transition: all 0.3s;
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.vhMainCard:hover::after {
+  transition: all 0.3s;
+  content: attr(data-href) " 🡥";
+  background-color: #ff7a5cd8;
+  color: var(--bg-main);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.vhMainCard:hover {
+  border: 3px solid var(--text-primary);
+}
+.vhMainCard:hover img {
+  transform: scale(1.1);
+}
+
+.vhImage {
+  overflow: hidden;
+  transition: all 0.3s;
+  width: 100%;
+  height: 250px;
+}
+
+.vhImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.vhTitle {
+  color: var(--bg-card);
+  font-weight: bold;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.eocom {
+  object-position: top;
+}
+
+.sendMailBox {
+  min-height: 600px;
+  background-image: url("/uploads/efeOnkar.png");
+  background-repeat: no-repeat;
+  background-position: 275px 50px;
+  background-size: 500px;
+  transition: background-color 0.3s ease;
+}
+
+.sendMailButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px 16px 20px;
+  background-color: var(--bg-active);
+  border-radius: 16px;
+  border: 2px solid var(--text-secondary);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  height: fit-content;
+  width: max-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.sendMailButton svg {
+  height: 36px;
+  width: 36px;
+  fill: white;
+  margin-right: 16px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* HOVER EFEKTİ — sade ve güçlü */
+.sendMailButton:hover {
+  background-color: var(--accent);
+  color: var(--bg-main);
+  border-color: var(--accent-hover);
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(255, 122, 92, 0.25);
+  margin-left: 16px;
+}
+
+.sendMailButton:hover svg {
+  filter: brightness(1.8);
+  transform: scale(1.1);
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: auto;
+  right: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.downloadResumeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  border-radius: 16px;
+  padding: 16px;
+  transition: all 0.3s;
+  background-color: var(--bg-active);
+  border: 2px solid var(--text-muted);
+  color: var(--text-primary);
+}
+
+.downloadResumeButton svg {
+  transition: all 0.3s;
+  height: 24px;
+  width: 24px;
+  fill: var(--text-primary);
+  margin-right: 8px;
+}
+
+.downloadResumeButton:hover {
+  background-color: var(--accent);
+  color: var(--bg-main);
+  border-color: var(--accent-hover);
+}
+
+.downloadResumeButton:hover svg {
+  fill: var(--bg-main);
+}
+
+ #contact{
+    margin-bottom: 0;
+  }
+
+  #contact .paragraphs{
+    color: var(--text-primary);
+  }
+  #contact h2{
+    color: var(--text-primary);
+  }
+
+@media (min-width: 0) and (max-width: 1023px) {
+  /* telefon */
+
+  .wrapper {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+    height: 100vh;
+    display: block;
+  }
+
+  .sideBarMain {
+    width: calc(100% - 32px);
+    padding: 16px;
+    z-index: 2;
+    background-color: var(--bg-main);
+    top: 0;
+  }
+
+  .sidebarBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    max-width: 400px;
+  }
+
+  .profilePicWrapper {
+    width: 100px;
+    height: 100px;
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  .titleBox {
+    flex-basis: calc(100% - 116px);
+    margin-left: 16px;
+    order: 2;
+  }
+
+  .myName,
+  .myTitle {
+    text-align: left;
+  }
+
+  .socialIconRow {
+    order: 3;
+    flex-basis: calc(100% - 116px);
+    position: absolute;
+    left: 124px;
+    top: 57px;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+    max-width: ;
+  }
+  .myDesc {
+    order: 4;
+    text-align: left;
+    display: none;
+  }
+
+  .sideBarNav {
+    margin-top: 16px;
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    overflow-y: scroll;
+  }
+
+  .menu li {
+    margin-right: 16px;
+  }
+
+  .content {
+    width: calc(100% - 32px);
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  .paragraphs {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .timeline {
+    font-size: 12px;
+    flex-basis: 90%;
+    order: 1;
+  }
+
+  .toggleIcon {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .compnayBox {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .shortDescription {
+    order: 4;
+    flex-basis: 100%;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .company {
+    font-size: 16px;
+  }
+
+  .techStack {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .techBox {
+    min-width: 100px;
+    margin: 0 16px 0 0;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .sendMailBox {
+    min-height: 320px;
+    background-position: center 50px;
+    background-size: contain;
+  }
+
+  .downloadResumeButton {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .vhMainCard {
+    flex-basis: calc(100% - 6px);
+    margin-bottom: 16px;
+  }
+
+  .sendMailButton {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .sendMailButton svg{
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+  } 
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  .vhMainCard{
+    flex-basis: 49%;
+  }
+}
